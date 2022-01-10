@@ -1,0 +1,20 @@
+eureka:
+  client:
+  register-with-eureka: ture
+fetch-registry: ture
+service-url:
+defaultZone: http://localhost:8761/eureka/
+instance:
+hostname: localhost
+
+
+microservice:
+  api-order:
+    endpoints:
+      endpoint:
+        url: http://PAYMENT-SERVICE/payment/doPayment
+
+        api-payment:
+          endpoints:
+            endpoint:
+              url: http://ORDER-SERVICE/order/bookOrder
